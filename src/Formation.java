@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.Set;
 
 public class Formation {
 
@@ -10,8 +11,11 @@ public class Formation {
         this.listeMatiere = l;
     }
 
-    public void ajouter(){
-        //to do
+    public void ajouter(String matiere, Integer coef){
+        boolean res = listeMatiere.containsKey(matiere);
+        if(!res){
+            listeMatiere.put(matiere, coef);
+        }
     }
 
     public void supprimer(){
