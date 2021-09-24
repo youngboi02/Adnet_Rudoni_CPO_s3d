@@ -18,8 +18,11 @@ public class Formation {
         }
     }
 
-    public void supprimer(){
-        //to do
+    public void supprimer(String matiere, Integer coef){
+        boolean res = listeMatiere.containsKey(matiere);
+        if(res){
+            listeMatiere.remove(matiere, coef);
+        }
     }
 
 
