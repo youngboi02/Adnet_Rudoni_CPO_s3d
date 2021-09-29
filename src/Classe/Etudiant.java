@@ -45,6 +45,7 @@ public class Etudiant {
         return moyenne;
     }
 
+
     // pour toutes
     /**Iterator<String> ite = formation.getListeMatiere().keySet().iterator();
      while(ite.hasNext()){
