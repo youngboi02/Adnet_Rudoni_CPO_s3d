@@ -1,5 +1,5 @@
 package test;
-
+import Classe.*;
 import jdk.jfr.StackTrace;
 
 import java.util.ArrayList;
