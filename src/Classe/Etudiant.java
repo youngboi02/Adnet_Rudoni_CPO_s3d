@@ -5,6 +5,7 @@ import Classe.Identite;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Etudiant {
@@ -45,8 +46,26 @@ public class Etudiant {
         return moyenne;
     }
 
+    public float calculMoyenneGenerale() {
+        float moyenneGen = 0;
+        float coeffTot = 0;
+        // on fait la moyenne d'une matiere qu'on multiplie par son coeff
+        Iterator<String> ite = formation.getListeMatiere().keySet().iterator();
+        while(ite.hasNext()) {
+            String m = ite.next();
+            float moyCoef = calculMoyenneMatiere(m);
+            moyenneGen += moyCoef;
+        }
+        // pour chaque matière, on cherche le coeff qu'on additionne avec les autres
 
-    // pour toutes
+        for (int i = 0; i<resultats.keySet().size();i++){
+            // on prend une seule fois le coeff pour chaque matiere
+        }
+
+        // on fait la somme de toutes les moyennes qu'on divise part le total des coeff
+        return moyenneGen;
+    }
+        // pour toutes
     /**Iterator<String> ite = formation.getListeMatiere().keySet().iterator();
      while(ite.hasNext()){
      String m = ite.next();
