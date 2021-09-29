@@ -25,6 +25,10 @@ public class Formation {
         }
     }
 
+    public int getMatiereCoef(String matiere){
+        return this.listeMatiere.get(matiere);
+    }
+
 
 
     public String getId() {
