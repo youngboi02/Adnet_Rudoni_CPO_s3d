@@ -54,14 +54,11 @@ public class Etudiant {
         while(ite.hasNext()) {
             String m = ite.next();
             float moyCoef = calculMoyenneMatiere(m);
-            moyenneGen += moyCoef;
+            moyenneGen += moyCoef * formation.getMatiereCoef(m);
+            coeffTot += formation.getMatiereCoef(m);
         }
         // pour chaque matière, on cherche le coeff qu'on additionne avec les autres
-
-        for (int i = 0; i<resultats.keySet().size();i++){
-            // on prend une seule fois le coeff pour chaque matiere
-        }
-
+        moyenneGen = moyenneGen/coeffTot;
         // on fait la somme de toutes les moyennes qu'on divise part le total des coeff
         return moyenneGen;
     }
