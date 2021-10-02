@@ -12,12 +12,18 @@ public class Groupe {
         this.listeEtu = l;
     }
 
-    public void ajouter(){
-        //
+    public void ajouter(Etudiant etudiant){
+        boolean res = listeEtu.contains(etudiant);
+        if(!res && etudiant.getFormation() == this.formation){
+            listeEtu.add(etudiant);
+        }
     }
 
-    public void supprimer(){
-        //
+    public void supprimer(Etudiant etudiant){
+        boolean res = listeEtu.contains(etudiant);
+        if(res){
+            listeEtu.remove(etudiant);
+        }
     }
 
     public double calculerMoyenneGroupe(){

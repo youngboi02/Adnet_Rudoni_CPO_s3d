@@ -1,8 +1,5 @@
 package Classe;
 
-import Classe.Formation;
-import Classe.Identite;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,6 +15,10 @@ public class Etudiant {
         this.id = identite;
         this.formation = form;
         this.resultats = new HashMap<String, Float>();
+    }
+
+    public Formation getFormation() {
+        return formation;
     }
 
     public void ajouterNote(String matiere, float note){
@@ -62,7 +63,11 @@ public class Etudiant {
         // on fait la somme de toutes les moyennes qu'on divise part le total des coeff
         return moyenneGen;
     }
-        // pour toutes
+
+    public Map<String, Float> getNotes() {
+        return this.resultats;
+    }
+    // pour toutes
     /**Iterator<String> ite = formation.getListeMatiere().keySet().iterator();
      while(ite.hasNext()){
      String m = ite.next();
