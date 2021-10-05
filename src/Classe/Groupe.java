@@ -27,10 +27,10 @@ public class Groupe {
     }
 
     public double calculerMoyenneGroupe(){
-        // return
+        return 0;
     }
 
     public double calculerMoyenneGenerale(){
-        // return
+        return 0;
     }
 }

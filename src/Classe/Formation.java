@@ -31,8 +31,6 @@ public class Formation {
         return this.listeMatiere.get(matiere);
     }
 
-
-
     public String getId() {
         return id;
     }
