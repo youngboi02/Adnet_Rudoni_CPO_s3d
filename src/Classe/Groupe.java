@@ -29,12 +29,10 @@ public class Groupe {
 
     public float calculerMoyenneMatiere(String matiere){
         float res = 0;
-        if (formation.getListeMatiere().get("matiere") != null){
-            for (Etudiant etud : listeEtu){
-                res += etud.calculMoyenneMatiere(matiere);
-            }
+        for (Etudiant etud : listeEtu){
+            res += etud.calculMoyenneMatiere(matiere);
         }
-        return res;
+        return res/listeEtu.size();
     }
 
     public float calculerMoyenneGenerale(){
@@ -46,4 +44,11 @@ public class Groupe {
         return res;
     }
 
+    public Formation getFormation() {
+        return formation;
+    }
+
+    public List<Etudiant> getListeEtu() {
+        return listeEtu;
+    }
 }

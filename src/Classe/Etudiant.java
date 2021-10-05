@@ -68,4 +68,7 @@ public class Etudiant {
         return this.resultats;
     }
 
+    public Identite getId() {
+        return id;
+    }
 }
