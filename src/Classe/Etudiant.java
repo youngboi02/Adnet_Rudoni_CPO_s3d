@@ -67,9 +67,5 @@ public class Etudiant {
     public Map<String, Float> getNotes() {
         return this.resultats;
     }
-    // pour toutes
-    /**Iterator<String> ite = formation.getListeMatiere().keySet().iterator();
-     while(ite.hasNext()){
-     String m = ite.next();
-     }*/
+
 }
