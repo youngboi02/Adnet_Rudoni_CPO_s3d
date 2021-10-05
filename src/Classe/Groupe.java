@@ -1,5 +1,6 @@
 package Classe;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Groupe {
@@ -26,11 +27,23 @@ public class Groupe {
         }
     }
 
-    public double calculerMoyenneGroupe(){
-        return 0;
+    public float calculerMoyenneMatiere(String matiere){
+        float res = 0;
+        if (formation.getListeMatiere().get("matiere") != null){
+            for (Etudiant etud : listeEtu){
+                res += etud.calculMoyenneMatiere(matiere);
+            }
+        }
+        return res;
     }
 
-    public double calculerMoyenneGenerale(){
-        return 0;
+    public float calculerMoyenneGenerale(){
+        float res = 0;
+        for (Etudiant etu : listeEtu){
+            res += etu.calculMoyenneGenerale();
+        }
+        res = res/listeEtu.size();
+        return res;
     }
+
 }
