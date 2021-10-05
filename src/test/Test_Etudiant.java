@@ -23,8 +23,10 @@ public class Test_Etudiant {
         etudiant.ajouterNote("Francais", 10);
 
         Map<String, Float> matiere = etudiant.getNotes();
+        float b = matiere.get("Francais");
+        float f = 10F;
 
-        assertEquals("la note devrait etre 10",matiere, 10);
+        assertEquals(f, b, 0);
     }
 
 }
