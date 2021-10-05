@@ -86,6 +86,19 @@ public class TestGroupe {
     }
 
     @Test
+    public void TestCalculMoyenneGenerale(){
+        // on recupere la moyenne en float, donc bcp de decimales
+        float res = group.calculerMoyenneGenerale();
+
+        // on le tronque en le passant en string
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.DOWN);
+        String s = df.format(res);
+
+        assertEquals("la moyenne devrait etre 13,69","13,69",s);
+    }
+
+    /**@Test
     public void TestDonnees(){
         for (Etudiant etu : etudiants){
             // les etudiants sont bien dans la liste dettud avec les bonnes valeurs
@@ -97,4 +110,5 @@ public class TestGroupe {
             //System.out.println(etu.getNotes());
         }
     }
+    */
 }
