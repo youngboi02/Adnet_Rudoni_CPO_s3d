@@ -51,4 +51,5 @@ public class Groupe {
     public List<Etudiant> getListeEtu() {
         return listeEtu;
     }
+
 }
