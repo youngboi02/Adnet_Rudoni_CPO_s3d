@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Etudiant {
+public class Etudiant{
 
     private Identite id;
     private Formation formation;
