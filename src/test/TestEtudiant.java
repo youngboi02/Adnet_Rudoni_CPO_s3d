@@ -41,8 +41,8 @@ public class TestEtudiant {
     @Test
     public void TestCalculMoyenneMatiere(){
         float res = 12.5F;
-        etudiant.ajouterNote(matiere, 10);
-        etudiant.ajouterNote(matiere, 15);
+        etudiant.ajouterNote(matiere, 10f);
+        etudiant.ajouterNote(matiere, 15f);
         float test = etudiant.calculMoyenneMatiere(matiere);
         System.out.println(etudiant.getNotes());
         assertEquals("la moyenne est censée etre de 12.5", res, test, 0);
@@ -51,8 +51,8 @@ public class TestEtudiant {
     @Test
     public void TestMoyenneGenerale(){
         float moyenne = 12.5F;
-        etudiant.ajouterNote(matiere, 10);
-        etudiant.ajouterNote(matiere2, 15);
+        etudiant.ajouterNote(matiere, 10f);
+        etudiant.ajouterNote(matiere2, 15f);
         float test = etudiant.calculMoyenneGenerale();
         assertEquals("la moyenne generale de l'etudiant devrait etre", moyenne, test, 0);
     }
