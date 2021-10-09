@@ -17,10 +17,6 @@ public class Etudiant{
         this.resultats = new HashMap<String, ArrayList<Float>>();
     }
 
-    public Formation getFormation() {
-        return formation;
-    }
-
     public void ajouterNote(String matiere, float note){
         if (note>0 && note<20 && formation.getListeMatiere().containsKey(matiere)){
             if (this.getResultats().containsKey(matiere)){
@@ -73,4 +69,9 @@ public class Etudiant{
     public Identite getId() {
         return id;
     }
+
+    public Formation getFormation() {
+        return formation;
+    }
+
 }
