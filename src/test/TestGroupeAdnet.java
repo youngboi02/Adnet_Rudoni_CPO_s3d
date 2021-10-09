@@ -73,7 +73,7 @@ public class TestGroupeAdnet {
 
 
     @Test
-    public void TestCalculMoyenneMatiere(){
+    public void TestMoyenneMatiereValide(){
         // on recupere la moyenne en float, donc bcp de decimales
         float res = group.calculerMoyenneMatiere("anglais");
 
@@ -86,7 +86,7 @@ public class TestGroupeAdnet {
     }
 
     @Test
-    public void TestCalculMoyenneGenerale(){
+    public void TestMoyenneGeneraleValide(){
         // on recupere la moyenne en float, donc bcp de decimales
         float res = group.calculerMoyenneGenerale();
 
