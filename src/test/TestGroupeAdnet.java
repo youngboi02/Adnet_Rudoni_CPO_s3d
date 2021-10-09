@@ -16,7 +16,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestGroupe {
+public class TestGroupeAdnet {
 
     private Groupe group;
     private Map<String, Integer> matieres;
