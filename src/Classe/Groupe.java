@@ -52,7 +52,7 @@ public class Groupe {
         return listeEtu;
     }
 
-    public List<Etudiant> triAlpha() {
+    /**public List<Etudiant> triAlpha() {
         for (int i = 0; i < listeEtu.size() - 1; i++) {
             int index = i;
             for (int j = i + 1; j < listeEtu.size(); j++) {
@@ -65,4 +65,5 @@ public class Groupe {
             listeEtu.get(i) = min;
         }
     }
+     */
 }

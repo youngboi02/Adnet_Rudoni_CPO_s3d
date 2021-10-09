@@ -98,17 +98,4 @@ public class TestGroupe {
         assertEquals("la moyenne devrait etre 13,69","13,69",s);
     }
 
-    /**@Test
-    public void TestDonnees(){
-        for (Etudiant etu : etudiants){
-            // les etudiants sont bien dans la liste dettud avec les bonnes valeurs
-            //System.out.println(etu.getId().getNip());
-            //System.out.println(etu.getId().getNom());
-            //System.out.println(etu.getId().getPrenom());
-
-            // les etudiants ont bien des notes, le pb vient de la fonction
-            //System.out.println(etu.getNotes());
-        }
-    }
-    */
 }
