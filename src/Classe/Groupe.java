@@ -66,4 +66,12 @@ public class Groupe {
         }
     }
      */
+
+    /**
+    public ArrayList<String> triParMerite(){
+         // je prends le nom d'un etudiant auquel j'ajoute sa moyenne générale
+        for (Etudiant etu : listeEtu){
+            System.out.println(etu.getId().getNom()+etu.getId().getPrenom()+":"+etu.calculMoyenneGenerale());
+        }
+     */
 }

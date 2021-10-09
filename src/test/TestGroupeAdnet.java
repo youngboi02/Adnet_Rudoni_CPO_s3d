@@ -87,6 +87,7 @@ public class TestGroupeAdnet {
 
     @Test
     public void TestMoyenneGeneraleValide(){
+        etu0.ajouterNote("anglais", 10);
         // on recupere la moyenne en float, donc bcp de decimales
         float res = group.calculerMoyenneGenerale();
 
@@ -95,7 +96,34 @@ public class TestGroupeAdnet {
         df.setRoundingMode(RoundingMode.DOWN);
         String s = df.format(res);
 
-        assertEquals("la moyenne devrait etre 13,69","13,69",s);
+        assertEquals("la moyenne devrait etre 13,54","13,54",s);
+    }
+
+    @Test
+    public void TestMoyenneMatierePlusieursNotes(){
+        etu0.ajouterNote("anglais", 10);
+        // on recupere la moyenne en float, donc bcp de decimales
+        float res = group.calculerMoyenneMatiere("anglais");
+
+        // on le tronque en le passant en string
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.DOWN);
+        String s = df.format(res);
+
+        assertEquals("la moyenne devrait etre 14,5","14,5",s);
+    }
+
+    @Test
+    public void TestMoyenneMatiereValidePlusieursNotes(){
+        // on recupere la moyenne en float, donc bcp de decimales
+        float res = group.calculerMoyenneMatiere("anglais");
+
+        // on le tronque en le passant en string
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.DOWN);
+        String s = df.format(res);
+
+        assertEquals("la moyenne devrait etre 15,3","15,33",s);
     }
 
 }
