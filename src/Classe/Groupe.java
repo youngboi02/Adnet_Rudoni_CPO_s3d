@@ -69,11 +69,26 @@ public class Groupe {
     }
 
 
-    /**
-    public ArrayList<String> triParMerite(){
-         // je prends le nom d'un etudiant auquel j'ajoute sa moyenne générale
-        for (Etudiant etu : listeEtu){
-            System.out.println(etu.getId().getNom()+etu.getId().getPrenom()+":"+etu.calculMoyenneGenerale());
+
+    public ArrayList<String> triParMerite() {
+
+        ArrayList<String> listeTriee = new ArrayList<>();
+
+        for (int i = 0; i < listeEtu.size(); i++) {
+            int i2 = i;
+            for (int j = i + 1; j < listeEtu.size(); j++) {
+                if (listeEtu.get(j).calculMoyenneGenerale() > listeEtu.get(i2).calculMoyenneGenerale()) {
+                    i2 = j;
+                }
+            }
+            Etudiant etuFirst = listeEtu.get(i);
+            Etudiant etuSecond = listeEtu.get(i2);
+
+            String etu0 = etuFirst.getId().getNom() + " " + etuFirst.getId().getPrenom() + " : " + etuFirst.calculMoyenneGenerale();
+            String etu1 = etuSecond.getId().getNom() + " " +etuSecond.getId().getPrenom() + " : " + etuSecond.calculMoyenneGenerale();
+            listeTriee.add(i2, etu0);
+            listeTriee.add(i, etu1);
         }
-     */
+        return listeTriee;
+    }
 }

@@ -18,8 +18,8 @@ public class TestGroupeRudoni {
     private Map<String, Integer> matieres;
     private Formation formation;
     private List<Etudiant> etudiants;
-    private Identite id0, id1;
-    private Etudiant et0, et1;
+    private Identite id0, id1, id2;
+    private Etudiant et0, et1, et2;
 
     @Before
     public void avant(){
@@ -33,13 +33,16 @@ public class TestGroupeRudoni {
 
         id0 = new Identite("0", "ochon", "paul");
         id1 = new Identite("1", "guigzome", "guigz");
+        id2 = new Identite("2", "paguitus", "romanus");
 
 
         et0 = new Etudiant(id0, formation);
         et1 = new Etudiant(id1,formation);
+        et2 = new Etudiant(id2,formation);
 
         etudiants.add(et0);
         etudiants.add(et1);
+        etudiants.add(et2);
 
         groupe = new Groupe(formation, etudiants);
     }
@@ -88,9 +91,26 @@ public class TestGroupeRudoni {
 
     @Test
     public void TestTriAlpha(){
+        //avant tri
+        System.out.println("Liste avant tri :");
+        for (Etudiant etu : groupe.getListeEtu()){
+            System.out.println(etu.getId().getNom());
+        }
+        System.out.println();
+        // strings correspondant aux noms avant
+        String ochon = etudiants.get(0).getId().getNom();
+        String guigz = etudiants.get(1).getId().getNom();
+        String paguitus = etudiants.get(2).getId().getNom();
+        // tri alpahabetique
         groupe.triAlpha();
-        String guigz = etudiants.get(0).getId().getNom();
-        assertEquals("l'etudiant en tete de liste devrait etre guigzome", etudiants.get(0).getId().getNom(), guigz);
+        // affichage de la liste apres le tri
+        System.out.println("Liste apres tri :");
+        for (Etudiant etu : groupe.getListeEtu()){
+            System.out.println(etu.getId().getNom());
+        }
+        assertEquals("l'etudiant en tete de liste devrait etre guigzome",guigz, etudiants.get(0).getId().getNom());
+        assertEquals("le deuxieme etudiant devrait etre ochon", ochon, etudiants.get(1).getId().getNom());
+        assertEquals("le troisieme etudiant devrait etre paguitus",paguitus, etudiants.get(2).getId().getNom());
     }
 
 

@@ -126,4 +126,10 @@ public class TestGroupeAdnet {
         assertEquals("la moyenne devrait etre 15,3","15,33",s);
     }
 
+    @Test
+    public void TriParMerite(){
+        System.out.println( group.triParMerite());
+
+    }
+
 }
