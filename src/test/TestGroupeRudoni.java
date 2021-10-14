@@ -86,5 +86,12 @@ public class TestGroupeRudoni {
         assertEquals("l'etudiant devrait ajouter a la formation", taille, tailleApres);
     }
 
+    @Test
+    public void TestTriAlpha(){
+        groupe.triAlpha();
+        String guigz = etudiants.get(0).getId().getNom();
+        assertEquals("l'etudiant en tete de liste devrait etre guigzome", etudiants.get(0).getId().getNom(), guigz);
+    }
+
 
 }

@@ -52,20 +52,22 @@ public class Groupe {
         return listeEtu;
     }
 
-    /**public List<Etudiant> triAlpha() {
-        for (int i = 0; i < listeEtu.size() - 1; i++) {
-            int index = i;
-            for (int j = i + 1; j < listeEtu.size(); j++) {
-                if (listeEtu.get(j).getId().getNom().compareTo(listeEtu.get(index).getId().getNom()) < 0) {
-                    index = j;
-                }
+    public void triAlpha() {
+        this.listeEtu.sort(new Comparator<Etudiant>() {
+            @Override
+            public int compare(Etudiant o1, Etudiant o2) {
+                String nom1 = o1.getId().getNom();
+                String nom2 = o2.getId().getNom();
+                String prenom1 = nom1 + o1.getId().getNom();
+                String prenom2 = nom2 + o2.getId().getNom();
+                int compare = prenom1.compareTo(prenom2);
+                if(compare < 0) return -1;
+                if (compare > 0) return 1;
+                return 0;
             }
-            Etudiant min = listeEtu.get(index);
-            listeEtu.get(index) = listeEtu.get(i);
-            listeEtu.get(i) = min;
-        }
+        });
     }
-     */
+
 
     /**
     public ArrayList<String> triParMerite(){
