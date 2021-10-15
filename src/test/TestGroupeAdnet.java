@@ -64,9 +64,10 @@ public class TestGroupeAdnet {
         etu2.ajouterNote("gestion", 5);
 
         // ajout des etudiants a la liste d etudiants
-        etudiants.add(etu0);
         etudiants.add(etu1);
         etudiants.add(etu2);
+        etudiants.add(etu0);
+
 
         group = new Groupe(form, etudiants);
     }
@@ -128,8 +129,26 @@ public class TestGroupeAdnet {
 
     @Test
     public void TriParMerite(){
-        System.out.println( group.triParMerite());
-
+        //avant tri
+        System.out.println("Liste avant tri :");
+        for (Etudiant etu : group.getListeEtu()){
+            System.out.println(etu.getId().getNom()+' '+etu.calculMoyenneGenerale());
+        }
+        System.out.println();
+        // strings correspondant aux noms avant
+        String vingron = etudiants.get(0).getId().getNom();
+        String mergonvillerelai = etudiants.get(1).getId().getNom();
+        String brackmard = etudiants.get(2).getId().getNom();
+        // tri alpahabetique
+        group.triParMerite();
+        // affichage de la liste apres le tri
+        System.out.println("Liste apres tri :");
+        for (Etudiant etu : group.getListeEtu()){
+            System.out.println(etu.getId().getNom()+' '+etu.calculMoyenneGenerale());
+        }
+        assertEquals("le premier du groupe devrait etre brackmard",brackmard, etudiants.get(0).getId().getNom());
+        assertEquals("le deuxieme de la classe devrait etre vingron",vingron, etudiants.get(1).getId().getNom());
+        assertEquals("le dernier de la classe devrait etre mergonvillerelai",mergonvillerelai, etudiants.get(2).getId().getNom());
     }
 
 }
